@@ -61,7 +61,7 @@ def turn_count
     count
 end
 
-def current_player(board)
+def current_player
   turn_count.even? ? "X" : "O"
 end
 
@@ -83,7 +83,7 @@ def draw?
   !won? && full?
 end
 
-def over?(board)
+def over?
   won? || full? || draw?
 end
 
