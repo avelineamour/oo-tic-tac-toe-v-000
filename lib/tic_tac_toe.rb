@@ -31,11 +31,11 @@ def move(index, character)
   @board[index] = character
 end
 
-def position_taken?
+def position_taken?(index)
   !(@board[index].nil? || @board[index] == " ")
 end
 
-def valid_move?
+def valid_move?(index)
   index.between?(0,8) && !position_taken?
 end
 
@@ -43,7 +43,7 @@ def turn
   puts "Please enter 1-9:"
   index = input_to_index(gets.strip)
   if valid_move?(board, index)
-    move(board, index, current_player)
+    move(index, current_player)
     display_board
   else
     turn
